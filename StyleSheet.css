@@ -1,189 +1,223 @@
-﻿
-@font-face {
-    font-family: 'TrajanProBold';
-    src: url('fonts/TrajanProBold.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'proxima';
-    src: url('fonts/proxima.otf') format('opentype');
-}
-body {
-    font-family: 'proxima';
-    color:#D20000;
-    background-color:black;
-}
-h3 {
-    font-size: 2rem;
-}
-p {
-    font-size: 1.5rem;
-    color:black;
-}
-/************************       header              ************************/
-header.container-fluid {
-    background-color: rgb(0, 0, 0);
-    color: #D20000;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    width: calc(100% - 15px);
-    /*opacity:0.4;*/
-}
-
-header h2 {
-    margin-top: 0.25rem;
-    font-family: 'TrajanProBold';
-}
-
-header button.btn {
-    border: 2px solid #D20000;
-    padding: 0;
-    border-radius: 2.1rem;
-    transition: opacity .2s;
-}
-
-    header button.btn:hover {
-        opacity:0.6;
+﻿    @font-face {
+        font-family: 'TrajanProBold';
+        src: url('fonts/TrajanProBold.ttf') format('truetype');
     }
-
-img.logo-img {
-    height: 4rem;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    line-height: 4rem;
-    letter-spacing: .06rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding-right: 2.6rem;
-    transition: color .5s;
-}
+    
+    @font-face {
+        font-family: 'proxima';
+        src: url('fonts/proxima.otf') format('opentype');
+    }
+    
+    body {
+        font-family: 'proxima';
+        color: #D20000;
+        background-color: black;
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+        color: black;
+    }
+    /************************       header              ************************/
+    
+    header.container-fluid {
+        background-color: rgb(0, 0, 0);
+        color: #D20000;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: calc(100% - 15px);
+        /*opacity:0.4;*/
+    }
+    
+    header h2 {
+        margin-top: 0.25rem;
+        font-family: 'TrajanProBold';
+    }
+    
+    header a.btn {
+        border: 2px solid #D20000;
+        padding: 0;
+        border-radius: 2.1rem;
+        transition: opacity .2s;
+    }
+    
+    header a.btn:hover {
+        opacity: 0.6;
+    }
+    
+    img.logo-img {
+        height: 4rem;
+    }
+    
+    header a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 4rem;
+        letter-spacing: .06rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-right: 2.6rem;
+        transition: color .5s;
+    }
+    
     header a:hover {
         color: #D20000;
         text-decoration: none;
     }
-
-/**************     PARALLAX        ****************/
-.parallax {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: visible;
-    -webkit-perspective: 300px;
-    perspective: 300px;
-}
-
-.group {
-    position: relative;
-    height: 100vh;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
-
-.layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.base {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 10;
-}
-
-.back {
-    -webkit-transform: translateZ(-300px) scale(2.3);
-    transform: translateZ(-300px) scale(2.3);
-    z-index: 3;
-    background-color: #6e6e6e;
-}
-
-.fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
-    z-index: 1;
-    height:10rem;
-}
-
-#group1 {
-    z-index: 5;
-}
-#group2 .back {
-    background-color:black;
-    background-image: url(img/sparta-family_e.png);
-    background-repeat:no-repeat;
-    background-position:center;
-}
-
-
+    /************************               EnterDiv                ************************/
+    
+    .enterDiv p {
+        color: white;
+    }
+    /**************     PARALLAX        ****************/
+    
+    .parallax {
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: visible;
+        -webkit-perspective: 300px;
+        perspective: 300px;
+        scroll-behavior: smooth;
+    }
+    
+    .group {
+        position: relative;
+        height: 100vh;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    
+    .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .base {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        z-index: 10;
+    }
+    
+    .back {
+        -webkit-transform: translateZ(-300px) scale(2.3);
+        transform: translateZ(-300px) scale(2.3);
+        z-index: 3;
+        background-color: #6e6e6e;
+    }
+    
+    .fore {
+        -webkit-transform: translateZ(90px) scale(.7);
+        transform: translateZ(90px) scale(.7);
+        z-index: 1;
+        height: 10rem;
+    }
+    
+    #group1 {
+        z-index: 5;
+    }
+    
+    #group2 .back {
+        background-color: black;
+        background-image: url(img/sparta-family_e.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     /**************************             CAROUSEL            ***************************/
-.carousel-background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 90%);
-    z-index: 2;
-}
-.carousel-item {
-    height: 100vh;
-}
+    
+    .carousel-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 90%);
+        z-index: 2;
+    }
+    
+    .carousel-item {
+        height: 100vh;
+    }
+    
     .carousel-item img {
-        height:100%;
+        height: 100%;
         object-fit: contain;
     }
-
-.carousel-caption, #group2 h2 {
-    text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
-}
-a.carousel-control-prev, a.carousel-control-next {
-    z-index: 3;
-}
-
-/***************************            group2              **********************************/
-
-#group2 img {
-    width: 100%;
-    border:2px white solid;
-    border-radius:0.5rem;
-    box-shadow: 0px 0px 4px 2px #D20000;
-}
-
-#group2 h2, #group3 h2 {
-    color: white;
-    text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
-    font-size: 3rem
-}
-
-/*****************************                         group3                                 ************************/
-#group3 h2{
-    text-align:center;
-}
-
-#group3 .row{
-    padding-top:16rem;
-}
-
-#group3 .btn {
-    color: #ffffff;
-    border: 2px solid #D20000;
-    font-size: 1rem;
-    border-radius: 0.25rem;
-    cursor:pointer;
-}
+    
+    .carousel-caption,
+    #group2 h2,
+    p.card-text {
+        text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
+    }
+    
+    a.carousel-control-prev,
+    a.carousel-control-next {
+        z-index: 3;
+    }
+    /***************************            group2              **********************************/
+    
+    #group2 img {
+        width: 100%;
+        border: 2px white solid;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 4px 2px #D20000;
+    }
+    
+    #group2 h2,
+    #group3 h2,
+    #group4 h2 {
+        color: white;
+        text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
+        font-size: 3rem;
+        text-align: center;
+    }
+    /*****************************                         group3                                 ************************/
+    
+    #group3 .row {
+        padding-top: 16rem;
+    }
+    
+    #group3 .btn {
+        color: #ffffff;
+        border: 2px solid #D20000;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+    }
+    
     #group3 .btn:hover {
         color: #D20000;
         box-shadow: 0px 0px 4px 2px #D20000;
     }
-#group3 .card {
-    background-color: transparent;
-}
-#group3 .card-img-top {
-    border:2px solid white;
-    border-radius: calc(100% - 1px);
-}
+    
+    #group3 .card {
+        background-color: transparent;
+    }
+    
+    #group3 .card-img-top {
+        border: 2px solid white;
+        border-radius: calc(100% - 1px);
+    }
+    /*******************        group4      ********************************/
+    
+    #group4 .row {
+        padding-top: 8rem;
+    }
+    
+    #group4 .check {
+        background-image: url(img/spartan_helmet-170x170.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    #group4 .table-dark {
+        background-color: transparent;
+        margin-top: 8rem;
+    }
