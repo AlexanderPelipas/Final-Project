@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,22 +9,25 @@
     <link href="StyleSheet.css" rel="stylesheet" />
     <title>Final Project</title>
 </head>
+
 <body>
 
     <header class="container-fluid">
         <div class="row">
-            <div class="col-3 logo">
+            <div class="col-4 logo">
                 <h2>
-                    <button type="button" class="btn"><img src="img/sparta-family_e.png" alt="sparta family logo" class="logo-img" /></button>
-                    SPARTA FAMILY
+                    <a href="#team" type="button" class="btn"><img src="img/sparta-family_e.png" alt="sparta family logo" class="logo-img" /></a> SPARTA FAMILY
                 </h2>
             </div>
-            <div class="col-3 offset-6 text-right">
-                <a href="#">РАСПИСАНИЕ</a>
-                <a href="#">ВОЙТИ</a>
+            <div class="col-4 offset-4 text-right">
+                <a href="#schedule">РАСПИСАНИЕ</a>
+                <a id="enter" href="#">ВОЙТИ</a>
             </div>
         </div>
     </header>
+
+
+
 
     <div class="parallax">
         <div id="group1" class="group">
@@ -87,7 +91,7 @@
         </div>
         <div id="group2" class="group">
             <div class="layer base container-fluid">
-                <div class="row">
+                <div class="row" id="team">
                     <div class="col-12 text-center m-3">
                         <h2>Мы - команда!</h2>
                     </div>
@@ -145,16 +149,78 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div id="group4" class="group">
+            <div class="layer base">
+                <div class="row">
+                    <div class="col-12" id="schedule">
+                        <h2>Расписание тренировок</h2>
+                    </div>
+                    <div class="col-10 offset-1">
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Направление</th>
+                                    <th scope="col">ПН</th>
+                                    <th scope="col">ВТ</th>
+                                    <th scope="col">СР</th>
+                                    <th scope="col">ЧТ</th>
+                                    <th scope="col">ПТ</th>
+                                    <th scope="col">СБ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">MMA</th>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">BOXING</th>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">BJJ</th>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CROSSFIT</th>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                    <td></td>
+                                    <td class="check"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
 
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="JavaScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="JavaScript.js"></script>
 </body>
+
 </html>
