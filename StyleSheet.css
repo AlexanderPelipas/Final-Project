@@ -70,21 +70,93 @@
         color: #D20000;
         text-decoration: none;
     }
-    /************************               EnterDiv                ************************/
-    
-    .enterDiv p {
-        color: white;
+
+/*****************************          form           ************************/
+form#signUp .form-control:focus {
+    border-color: #495057;
+    box-shadow: 0 0 0 0.2rem #d2000073;
+}
+#signUp {
+    position: fixed;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    background-color: black;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid #fff;
+}
+#signUp.row{
+    display:block;
+}
+
+    #signUp span.close {
+        right: 1rem;
+        top: 1rem;
+        opacity: 0.5;
     }
-    /**************     PARALLAX        ****************/
-    
-    .parallax {
-        height: 100vh;
-        overflow-x: hidden;
-        overflow-y: visible;
-        -webkit-perspective: 300px;
-        perspective: 300px;
-        scroll-behavior: smooth;
+        #signUp span.close:hover {
+            opacity: 1;
+        }
+        #signUp span.close:before, #signUp span.close::after {
+            background-color: #fff;
+        }
+        /*****************************          GYM         ****************************/
+        .close {
+            position: absolute;
+            right: 0;
+            top: -1rem;
+            width: 2rem;
+            height: 2rem;
+            opacity: 0.3;
+            cursor: pointer;
+        }
+
+    .close:hover {
+        opacity: 1;
     }
+
+    .close:before, .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    .close:before {
+        transform: rotate(45deg);
+    }
+
+    .close:after {
+        transform: rotate(-45deg);
+    }
+
+#gym1, #gym2, #table {
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid #D20000;
+}
+
+.row#gym2 .btn {
+    background-color: #495057;
+}
+
+/**************     PARALLAX        ****************/
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    scroll-behavior: smooth;
+}
     
     .group {
         position: relative;
@@ -110,8 +182,6 @@
     .back {
         -webkit-transform: translateZ(-300px) scale(2.3);
         transform: translateZ(-300px) scale(2.3);
-        z-index: 3;
-        background-color: #6e6e6e;
     }
     
     .fore {
@@ -120,19 +190,51 @@
         z-index: 1;
         height: 10rem;
     }
-    
-    #group1 {
-        z-index: 5;
-    }
+
+#group1, #group3 {
+    z-index: 5;
+}
     
     #group2 .back {
         background-color: black;
-        background-image: url(img/sparta-family_e.png);
+        background: url(img/sparta-family_e.png);
         background-repeat: no-repeat;
         background-position: center;
     }
+
+#group4 .back {
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,1) 70%), url(img/mma_3.jpg) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#group4 .back1 {
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 80%), url(img/mma_3.jpg) no-repeat;
+    -webkit-transform: translateZ(-300px) scale(2.3);
+    transform: translateZ(-300px) scale(2.3);
+}
+
+#group4 .back2 {
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 80%), url(img/box_2.jpg) no-repeat;
+    -webkit-transform: translateZ(-300px) scale(2.3);
+    transform: translateZ(-300px) scale(2.3);
+}
+
+#group4 .back3 {
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 80%), url(img/bjj_2.jpg) no-repeat;
+    -webkit-transform: translateZ(-300px) scale(2.3);
+    transform: translateZ(-300px) scale(2.3);
+}
+
+#group4 .back4 {
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 80%), url(img/crossfit_2.jpg) no-repeat;
+    -webkit-transform: translateZ(-300px) scale(2.3);
+    transform: translateZ(-300px) scale(2.3);
+}
+#group4 .back1, #group4 .back2, #group4 .back3, #group4 .back4 {
+    background-position: center;
+    background-size: contain;
+}
     /**************************             CAROUSEL            ***************************/
-    
     .carousel-background {
         width: 100%;
         height: 100%;
@@ -150,12 +252,12 @@
         height: 100%;
         object-fit: contain;
     }
-    
-    .carousel-caption,
-    #group2 h2,
-    p.card-text {
-        text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
-    }
+
+.carousel-caption,
+#group2 h2,
+p.card-text, .table-dark thead th {
+    text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
+}
     
     a.carousel-control-prev,
     a.carousel-control-next {
@@ -172,7 +274,8 @@
     
     #group2 h2,
     #group3 h2,
-    #group4 h2 {
+    #group4 h2,
+    #group5 h2{
         color: white;
         text-shadow: 2px 2px 4px #D20000, -2px -2px 4px #D20000;
         font-size: 3rem;
@@ -183,22 +286,33 @@
     #group3 .row {
         padding-top: 16rem;
     }
-    
-    #group3 .btn {
-        color: #ffffff;
-        border: 2px solid #D20000;
-        font-size: 1rem;
-        border-radius: 0.25rem;
-        cursor: pointer;
-    }
-    
-    #group3 .btn:hover {
+
+#group3 .btn,
+header .form-row .btn, 
+form#signUp .btn, 
+#group5 .btn,
+#gym2 .btn{
+    color: #ffffff;
+    border: 2px solid #D20000;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+    #group3 .btn:hover,
+    header .form-row .btn:hover,
+    #signUp .form-row .btn:hover,
+    #group5 .btn:hover,
+    #gym2 .btn:hover,
+    #inputNumber:hover{
         color: #D20000;
         box-shadow: 0px 0px 4px 2px #D20000;
     }
     
     #group3 .card {
         background-color: transparent;
+        border:none;
     }
     
     #group3 .card-img-top {
@@ -210,14 +324,57 @@
     #group4 .row {
         padding-top: 8rem;
     }
-    
-    #group4 .check {
-        background-image: url(img/spartan_helmet-170x170.jpg);
+
+#group4 .check {
+    background: url(img/helmet.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+}
+    #group4 .check:hover {
+        background: rgb(255,255,255);
+        background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(210,0,0,0.5) 50%, rgba(255,255,255,0) 100%),url(img/helmet.png) no-repeat;
         background-size: contain;
-        background-repeat: no-repeat;
+        background-position: center;
     }
-    
+
     #group4 .table-dark {
         background-color: transparent;
         margin-top: 8rem;
+        text-align:center;
     }
+
+        #group4 .table-dark th:first-child {
+            text-align: left;
+        }
+
+#group4 .check:hover::after {
+    content: "Кликни и запишись!";
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -2rem;
+    right: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+}
+
+/************************                     group5                    **** *************************/
+
+#group5 .row {
+    padding-top: 8rem;
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 80%), url(img/crossfit_3.jpg);
+    background-position: center;
+    background-size: contain;
+    height: 100vh;
+}
+
+#group5 p{
+    color:white;
+}

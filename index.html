@@ -26,9 +26,6 @@
         </div>
     </header>
 
-
-
-
     <div class="parallax">
         <div id="group1" class="group">
             <div class="layer base ">
@@ -123,7 +120,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Андрей Высоцкий</h5>
                                 <p class="card-text">Boxing</p>
-                                <a href="#" class="btn">Записаться на тренировку</a>
+                                <a href="#" class="btn" id="signBoxing" data-training="Boxing">Записаться на тренировку</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +130,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Дмитрий Кошкер</h5>
                                 <p class="card-text">MMA, BJJ</p>
-                                <a href="#" class="btn">Записаться на тренировку</a>
+                                <a href="#" class="btn" id="signMMA" data-training="MMA">Записаться на тренировку</a>
                             </div>
                         </div>
                     </div>
@@ -143,7 +140,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Владислав Филь</h5>
                                 <p class="card-text">Crossfit</p>
-                                <a href="#" class="btn">Записаться на тренировку</a>
+                                <a href="#" class="btn" id="signCrossfit" data-training="Crossfit">Записаться на тренировку</a>
                             </div>
                         </div>
                     </div>
@@ -172,49 +169,210 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">MMA</th>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="MMA"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="MMA"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="MMA"></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">BOXING</th>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="Boxing"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="Boxing"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="Boxing"></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">BJJ</th>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="BJJ"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="BJJ"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="BJJ"></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">CROSSFIT</th>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="Crossfit"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="Crossfit"></td>
                                     <td></td>
-                                    <td class="check"></td>
+                                    <td class="check" data-training="Crossfit"></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            <div class="layer back"></div>
+        </div>
+        <div id="group5" class="group">
+            <div class="layer base">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Тренажерный зал</h2>
+                    </div>
+                    <div class="col-3 offset-1">
+                        <p>Tренажерный зал - это идеальное место и для любителей здорового образа жизни, и для фанатов железного спорта. </p>
+                    </div>
+                    <div class="col-3 offset-4 text-right">
+                        <p>Хотите укрепить здоровье и создать сильное привлекательное тело – спешите записаться на занятия в нашем зале!</p>
+                    </div>
+                    <div class="col-3 offset-1">
+                        <a href="#" class="btn" id="gymBuy">Приобрести абонемент</a>
+                    </div>
+                    <div class="col-3 offset-4 text-right">
+                        <a href="#" class="btn" id="gymCheck">Личный кабинет</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <div class="container">
+        <form id="signUp" class="row" hidden>
+            <div class="form-row">
+                <span class="close"></span>
+                <div class="form-group col-md-7 offset-1">
+                    <label for="inputName">Фамилия Имя</label>
+                    <input type="text" class="form-control" placeholder="Имя" id="inputName">
+                </div>
+                <div class="form-group col-md-3 ">
+                    <label for="tel">Телефон</label>
+                    <input type="tel" class="form-control" id="tel" pattern="+38-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3 offset-1">
+                    <label for="training">Направление</label>
+                    <select class="form-control" id="training">
+                        <option>MMA</option>
+                        <option>Boxing</option>
+                        <option>BJJ</option>
+                        <option>Crossfit</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="date">День недели</label>
+                    <select class="form-control" id="date">
+                        <option>Понедельник</option>
+                        <option>Среда</option>
+                        <option>Пятница</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="time">Время</label>
+                    <select id="time" class="form-control">
+                        <option selected>16.00</option>
+                        <option>18.00</option>
+                        <option>20.00</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-11 text-right">
+                    <button type="submit" class="btn btn-primary">Записаться</button>
+                    <button class="btn btn-primary" id="cancelSign">Отмена</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
+    <div class="container">
+        <div class="row" id="gym1" hidden>
+            <div class="col-12 text-center">
+                <span class="close"></span>
+                <h2>ЦЕНЫ НА АБОНЕМЕНТЫ ТРЕНАЖЕРНОГО ЗАЛА</h2>
+            </div>
+            <div class="col-10 offset-1">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Количество занятий</th>
+                            <th scope="col">1 месяц</th>
+                            <th scope="col">3 месяца</th>
+                            <th scope="col">6 месяцев</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>300</td>
+                            <td>800</td>
+                            <td>1500</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td>400</td>
+                            <td>1000</td>
+                            <td>1800</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Безлимит</th>
+                            <td>450</td>
+                            <td>1200</td>
+                            <td>2200</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row" id="gym2" hidden>
+            <div class="col-12 text-center">
+                <span class="close"></span>
+                <h2>ИНФОРМАЦИЯ О ПОСЕЩЕНИЯХ</h2>
+            </div>
+            <div class="col-10 offset-1">
+                <form class="form">
+                    <div class="form-group row">
+                        <label for="inputNumber" class="col-sm-5 col-form-label">Введите № абонемента:</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="inputNumber" placeholder="007">
+                        </div>
+                        <div class="col-sm-4 text-right"><button type="submit" class="btn mb-2" id="gym2Btn">Подтвердить</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="table" class="row" hidden>
+            <div class="col-12 text-center">
+                <span class="close"></span>
+                <h2>АБОНЕМЕНТ №
+                    <span class="abNum"></span>
+                    <span class="status"></span>
+                </h2>
+            </div>
+            <div class="col-10 offset-1">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Количество занятий в месяц</th>
+                            <td id="numWork"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Срок окончания действия</th>
+                            <td id="deadline"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Первое посещение</th>
+                            <td id="firstVisit"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Количество посещенных тренировок</th>
+                            <td id="numVisit"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
