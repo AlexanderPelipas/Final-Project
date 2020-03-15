@@ -185,6 +185,7 @@ function showGym1(e) {
 function showGym2(e) {
     e.preventDefault();
     show(gym2);
+    inputNumber.value = "007";
 }
 
 let close = document.querySelectorAll(".close");
@@ -197,13 +198,53 @@ function closeGym(e) {
 
 /**************     table abonement     ***************/
 
-let gym2Btn = document.getElementById("gym2Btn");
-let table = document.getElementById("table");
+let gym2Btn = document.getElementById("gym2Btn");           /* кнопка "Подтвердить" в личном кабинете */
+let table = document.getElementById("table");               /* панель ИНФОРМАЦИЯ О ПОСЕЩЕНИЯХ */
+let dataJson;                                               /* JSON */
+let inputNumber = document.getElementById("inputNumber");   /* поле -Введите № абонемента: */
+inputNumber.defaultValue = "007";
+
+let numWork = document.getElementById("numWork");           /* ячейка - Количество занятий в месяц */
+let deadline = document.getElementById("deadline");         /* ячейка - Срок окончания действия */
+let firstVisit = document.getElementById("firstVisit");     /* ячейка - Первое посещение */
+let numVisit = document.getElementById("numVisit");         /* ячейка - Количество посещенных тренировок */
 
 gym2Btn.addEventListener("click", showTable);
 
 function showTable(e) {
     e.preventDefault();
+    numWork.innerHTML = "";
+    deadline.innerHTML = "";
+    firstVisit.innerHTML = "";
+    numVisit.innerHTML = "";
     show(table);
     hide(gym2);
+    funcJson();
+}
+
+
+
+/**************************             JSON               **************************************************/
+
+
+
+function funcJson() {
+    fetch('https://spreadsheets.google.com/feeds/cells/1RvQNAlNGK0dbPRzchu5pfdSp1Hin6hD47uQoXbt2-Ms/1/public/full?alt=json')
+        .then(response => response.json())
+        .then(data => {
+            dataJson = data;
+            getContent(dataJson);
+        });
+}
+
+
+
+function getContent() {
+    let arrJson = dataJson.feed.entry;                                                                          /* массив ячеек из Google Spreadsheet */
+    let cell = arrJson.find(item => (item.gs$cell.col == 2 && item.gs$cell.$t == +inputNumber.value));          /* ячейка с № абонемента */
+    let cellRow = cell.gs$cell.row;                                                                             /* строка с № абонемента */
+    numWork.innerHTML = arrJson.find(item => (item.gs$cell.col == 3 && item.gs$cell.row == cellRow)).gs$cell.$t;
+    deadline.innerHTML = arrJson.find(item => (item.gs$cell.col == 6 && item.gs$cell.row == cellRow)).gs$cell.$t;
+    firstVisit.innerHTML = arrJson.find(item => (item.gs$cell.col == 5 && item.gs$cell.row == cellRow)).gs$cell.$t;
+    numVisit.innerHTML = arrJson.find(item => (item.gs$cell.col == 8 && item.gs$cell.row == cellRow)).gs$cell.$t;
 }
