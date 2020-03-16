@@ -13,15 +13,35 @@
 <body>
 
     <header class="container-fluid">
-        <div class="row">
-            <div class="col-4 logo">
+        <div class="row d-none d-md-flex">
+            <div class="col-8">
                 <h2>
                     <a href="#team" type="button" class="btn"><img src="img/sparta-family_e.png" alt="sparta family logo" class="logo-img" /></a> SPARTA FAMILY
                 </h2>
             </div>
-            <div class="col-4 offset-4 text-right">
+            <div class="col-4 text-right">
                 <a href="#schedule">РАСПИСАНИЕ</a>
                 <a id="enter" href="#">ВОЙТИ</a>
+            </div>
+        </div>
+        <div class="row d-md-none">
+            <div class="col-2 mobile-col">
+                <div class="btn-group">
+                    <button type="button" class="btn appearance_none dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/sparta-family_e.png" alt="sparta family logo" class="logo-img" />
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="enterMobile" href="#">ВОЙТИ</a>
+                        <a class="dropdown-item" href="#schedule">РАСПИСАНИЕ</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="signTraining">Записаться на тренировку</a>
+                        <a class="dropdown-item" id="abPrice">Цены на абонемент</a>
+                        <a class="dropdown-item" id="gymCheckMobile">Личный кабинет</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col my-auto">
+                <h3 class="text-right">SPARTA FAMILY</h3>
             </div>
         </div>
     </header>
@@ -92,16 +112,16 @@
                     <div class="col-12 text-center m-3">
                         <h2>Мы - команда!</h2>
                     </div>
-                    <div class="col-3 offset-1 my-3">
+                    <div class="col-lg-3 col-md-4 offset-lg-1 my-3">
                         <img src="img/club1.jpg" />
                     </div>
-                    <div class="col-3 offset-4 my-3">
+                    <div class="col-lg-3 col-md-4 offset-lg-4 my-3">
                         <img src="img/club2.jpg" />
                     </div>
-                    <div class="col-3 offset-1 my-3">
+                    <div class="col-lg-3 col-md-4 offset-lg-1 my-3">
                         <img src="img/club3.jpg" />
                     </div>
-                    <div class="col-3 offset-4 my-3">
+                    <div class="col-lg-3 col-md-4 offset-lg-4 my-3">
                         <img src="img/club4.jpg" />
                     </div>
                 </div>
@@ -114,7 +134,7 @@
             </div>
             <div class="layer base ">
                 <div class="row text-center">
-                    <div class="col-2 offset-2">
+                    <div class="col-lg-2 col-md-4 offset-lg-2">
                         <div class="card">
                             <img class="card-img-top" src="img/Coach1.PNG" alt="Card image cap">
                             <div class="card-body">
@@ -124,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-2 offset-1">
+                    <div class="col-lg-2 col-md-4 offset-lg-1">
                         <div class="card">
                             <img class="card-img-top" src="img/Coach2.PNG" alt="Card image cap">
                             <div class="card-body">
@@ -134,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-2 offset-1">
+                    <div class="col-lg-2 col-md-4 offset-lg-1">
                         <div class="card">
                             <img class="card-img-top" src="img/Coach3.PNG" alt="Card image cap">
                             <div class="card-body">
@@ -153,8 +173,8 @@
                     <div class="col-12" id="schedule">
                         <h2>Расписание тренировок</h2>
                     </div>
-                    <div class="col-10 offset-1">
-                        <table class="table table-dark">
+                    <div class="col-lg-10 col-sm-12 offset-lg-1">
+                        <table class="table table-dark tableBig">
                             <thead>
                                 <tr>
                                     <th scope="col">Направление</th>
@@ -213,19 +233,19 @@
         <div id="group5" class="group">
             <div class="layer base">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-12">
                         <h2>Тренажерный зал</h2>
                     </div>
-                    <div class="col-3 offset-1">
+                    <div class="col-lg-3 col-sm-12 offset-lg-1">
                         <p>Tренажерный зал - это идеальное место и для любителей здорового образа жизни, и для фанатов железного спорта. </p>
                     </div>
-                    <div class="col-3 offset-4 text-right">
+                    <div class="col-lg-3 col-sm-12 offset-lg-4 textAlign">
                         <p>Хотите укрепить здоровье и создать сильное привлекательное тело – спешите записаться на занятия в нашем зале!</p>
                     </div>
-                    <div class="col-3 offset-1">
+                    <div class="col-lg-3 col-sm-12 offset-lg-1">
                         <a href="#" class="btn" id="gymBuy">Приобрести абонемент</a>
                     </div>
-                    <div class="col-3 offset-4 text-right">
+                    <div class="col-lg-3 col-sm-12 offset-lg-4 textAlign">
                         <a href="#" class="btn" id="gymCheck">Личный кабинет</a>
                     </div>
                 </div>
@@ -237,17 +257,17 @@
         <form id="signUp" class="row" hidden>
             <div class="form-row">
                 <span class="close"></span>
-                <div class="form-group col-md-7 offset-1">
+                <div class="form-group col-lg-7 col-sm-12 offset-lg-1">
                     <label for="inputName">Фамилия Имя</label>
                     <input type="text" class="form-control" placeholder="Имя" id="inputName">
                 </div>
-                <div class="form-group col-md-3 ">
+                <div class="form-group col-lg-3 col-sm-12 ">
                     <label for="tel">Телефон</label>
                     <input type="tel" class="form-control" id="tel" pattern="+38-[0-9]{3}-[0-9]{3}-[0-9]{4}">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-3 offset-1">
+                <div class="form-group col-lg-3 col-sm-12 offset-lg-1">
                     <label for="training">Направление</label>
                     <select class="form-control" id="training">
                         <option>MMA</option>
@@ -256,7 +276,7 @@
                         <option>Crossfit</option>
                     </select>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-lg-4 col-sm-12">
                     <label for="date">День недели</label>
                     <select class="form-control" id="date">
                         <option>Понедельник</option>
@@ -264,7 +284,7 @@
                         <option>Пятница</option>
                     </select>
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-lg-3 col-sm-12">
                     <label for="time">Время</label>
                     <select id="time" class="form-control">
                         <option selected>16.00</option>
@@ -274,7 +294,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-11 text-right">
+                <div class="col-lg-11 col-sm-12 text-right">
                     <button type="submit" class="btn btn-primary">Записаться</button>
                     <button class="btn btn-primary" id="cancelSign">Отмена</button>
                 </div>
@@ -286,16 +306,16 @@
         <div class="row" id="gym1" hidden>
             <div class="col-12 text-center">
                 <span class="close"></span>
-                <h2>ЦЕНЫ НА АБОНЕМЕНТЫ ТРЕНАЖЕРНОГО ЗАЛА</h2>
+                <h2 class="gimPrice">ЦЕНЫ НА АБОНЕМЕНТЫ ТРЕНАЖЕРНОГО ЗАЛА</h2>
             </div>
-            <div class="col-10 offset-1">
-                <table class="table">
+            <div class="col-lg-10  col-sm-12 offset-lg-1">
+                <table class="table price">
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">Количество занятий</th>
                             <th scope="col">1 месяц</th>
-                            <th scope="col">3 месяца</th>
-                            <th scope="col">6 месяцев</th>
+                            <th scope="col">3 мес.</th>
+                            <th scope="col">6 мес.</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -324,7 +344,7 @@
         <div class="row" id="gym2" hidden>
             <div class="col-12 text-center">
                 <span class="close"></span>
-                <h2>ИНФОРМАЦИЯ О ПОСЕЩЕНИЯХ</h2>
+                <h2 class="gimPrice">ИНФОРМАЦИЯ О ПОСЕЩЕНИЯХ</h2>
             </div>
             <div class="col-10 offset-1">
                 <form class="form">
