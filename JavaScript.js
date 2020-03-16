@@ -1,10 +1,15 @@
+let click;
+//      форма входа
 let enterBtn = document.getElementById("enter");
 let header = document.querySelector("header");
+let enterMobileBtn = document.getElementById("enterMobile");
 let numEntDiv = 0;
 let cancel;
 
+enterMobileBtn.addEventListener("click", showEnter);
+enterBtn.addEventListener("click", showEnter);
 
-enterBtn.addEventListener("click", function() {
+function showEnter(e) {
     let enterDiv = document.createElement("div");
     enterDiv.className = "col-12";
     let text = `
@@ -26,7 +31,7 @@ enterBtn.addEventListener("click", function() {
     </div>
     `
     enterDiv.innerHTML = text;
-
+    CloseEnterDiv(enterDiv);
     if (numEntDiv == 0) {
         header.append(enterDiv);
         numEntDiv++;
@@ -34,7 +39,7 @@ enterBtn.addEventListener("click", function() {
     } else {
         removeEnterDiv();
     }
-})
+}
 
 header.addEventListener("click", function (e) {
     if (e.target == cancel) {
@@ -48,6 +53,24 @@ function removeEnterDiv() {
     numEntDiv--;
 }
 
+function CloseEnterDiv(elem) {
+    click = 0;
+    function outsideClickListener2(event) {
+        if (!elem.contains(event.target) && (click != 0)) {                      // проверяем, что клик не по элементу и это не первый клик
+            removeEnterDiv();                                                 // скрываем элемент
+            document.removeEventListener('click', outsideClickListener2);        // удаляем обработчик
+        } else {
+            if (!(header.querySelector(".col-12"))) {                                          // если элемент не существует - удаляем обработчик
+                document.removeEventListener('click', outsideClickListener2);
+            } else {
+                click++;
+            }
+        }
+    }
+    document.addEventListener('click', outsideClickListener2);
+}
+
+
 /***************************************************************************************/
 
 let signUp = document.getElementById("signUp");
@@ -55,6 +78,10 @@ let signBoxing = document.getElementById("signBoxing");
 let signMMA = document.getElementById("signMMA");
 let signCrossfit = document.getElementById("signCrossfit");
 let cancelSign = document.getElementById("cancelSign");
+
+//          запись на тренировку из выпадающего меню
+let signTraining = document.getElementById("signTraining");
+signTraining.addEventListener("click", showForm);
 
 function show(element) {            /***************            function show()             ****************/
     element.hidden = false;
@@ -66,6 +93,7 @@ function hide(element) {            /***************            function hide() 
 
 function showForm(e) {
     e.preventDefault();
+    onClickClose(signUp);
     show(signUp);
     training = e.target.dataset.training;
     selectTraining.value = training;
@@ -168,22 +196,29 @@ function switchChange() {
 selectTraining.addEventListener("change", switchChange);
 
 /********************************           gymBuy          ********************************/
-
-let gymBuy = document.getElementById("gymBuy");
+let gymBuy = document.getElementById("gymBuy");     //цены на обонемент
 let gym1 = document.getElementById("gym1");
-let gymCheck = document.getElementById("gymCheck");
+let gymCheck = document.getElementById("gymCheck");     //личный кабинет
 let gym2 = document.getElementById("gym2");
 
 gymBuy.addEventListener("click", showGym1);
 gymCheck.addEventListener("click", showGym2);
 
+let abPrice = document.getElementById("abPrice");       //цены на обонемент  из выпадающего списка
+abPrice.addEventListener("click", showGym1);
+let gymCheckMobile = document.getElementById("gymCheckMobile");     //личный кабинет из выпадающего списка
+gymCheckMobile.addEventListener("click", showGym2);
 
 function showGym1(e) {
     e.preventDefault();
+    onClickClose(gym1);    
     show(gym1);
+
 }
+
 function showGym2(e) {
     e.preventDefault();
+    onClickClose(gym2);
     show(gym2);
     inputNumber.value = "007";
 }
@@ -195,6 +230,27 @@ function closeGym(e) {
     let element =e.target.closest(".row");
     hide(element);
 }
+
+//**********************************                function onClickClose(elem, evTarget)               ************************************//
+
+function onClickClose(elem) { 
+    click = 0;
+    function outsideClickListener(event) {
+        if (!elem.contains(event.target) && (click!= 0)) {                      // проверяем, что клик не по элементу и это не первый клик
+            elem.hidden = true;                                                 // скрываем элемент
+            document.removeEventListener('click', outsideClickListener);        // удаляем обработчик
+        } else {
+            if (elem.hidden == true) {                                          // если элемент скрыт - удаляем обработчик
+                document.removeEventListener('click', outsideClickListener);
+            } else {
+                click++;
+            }
+        }
+    }
+    document.addEventListener('click', outsideClickListener);
+}
+
+
 
 /**************     table abonement     ***************/
 
@@ -225,9 +281,6 @@ function showTable(e) {
 
 
 /**************************             JSON               **************************************************/
-
-
-
 function funcJson() {
     fetch('https://spreadsheets.google.com/feeds/cells/1RvQNAlNGK0dbPRzchu5pfdSp1Hin6hD47uQoXbt2-Ms/1/public/full?alt=json')
         .then(response => response.json())
@@ -236,8 +289,6 @@ function funcJson() {
             getContent(dataJson);
         });
 }
-
-
 
 function getContent() {
     let arrJson = dataJson.feed.entry;                                                                          /* массив ячеек из Google Spreadsheet */

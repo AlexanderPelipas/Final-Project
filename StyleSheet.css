@@ -26,25 +26,25 @@
     
     header.container-fluid {
         background-color: rgb(0, 0, 0);
-        color: #D20000;
         position: fixed;
         top: 0;
         z-index: 100;
         width: calc(100% - 15px);
+        padding:0;
         /*opacity:0.4;*/
     }
     
-    header h2 {
+    header h2, h3{
         margin-top: 0.25rem;
         font-family: 'TrajanProBold';
     }
-    
-    header a.btn {
-        border: 2px solid #D20000;
-        padding: 0;
-        border-radius: 2.1rem;
-        transition: opacity .2s;
-    }
+
+header a.btn {
+    border: 2px solid #D20000;
+    padding: 0;
+    border-radius: 2.1rem;
+    transition: opacity .2s;
+}
     
     header a.btn:hover {
         opacity: 0.6;
@@ -53,19 +53,24 @@
     img.logo-img {
         height: 4rem;
     }
-    
-    header a {
-        color: #fff;
-        text-decoration: none;
-        line-height: 4rem;
-        letter-spacing: .06rem;
-        font-size: 1.3rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding-right: 2.6rem;
-        transition: color .5s;
-    }
-    
+
+header .mobile-col a {
+    font-size:1rem;
+}
+
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 4rem;
+    letter-spacing: .06rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-right: 2.6rem;
+    transition: color .5s;
+}
+
     header a:hover {
         color: #D20000;
         text-decoration: none;
@@ -233,16 +238,44 @@ form#signUp .form-control:focus {
 #group4 .back1, #group4 .back2, #group4 .back3, #group4 .back4 {
     background-position: center;
     background-size: contain;
-}
-    /**************************             CAROUSEL            ***************************/
-    .carousel-background {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgb(0, 0, 0);
-        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 90%);
-        z-index: 2;
     }
+
+@media screen and (max-width: 768px){
+    .parallax {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: visible;
+        -webkit-perspective: 0px;
+        perspective: 0px;
+    }
+    .group {
+        height: 100%;
+        -webkit-transform-style: flat;
+        transform-style: flat;
+    }
+
+    .layer {
+        position: relative;
+    }
+
+    .base {
+        z-index: 10;
+    }
+
+    .back, .fore {
+        display:none;
+    }
+
+}
+/**************************             CAROUSEL            ***************************/
+.carousel-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 90%);
+    z-index: 2;
+}
     
     .carousel-item {
         height: 100vh;
@@ -364,9 +397,7 @@ form#signUp .btn,
     border: 2px solid #fff;
     border-radius: 0.5rem;
 }
-
-/************************                     group5                    **** *************************/
-
+/*********************                     group5                    **** *************************/
 #group5 .row {
     padding-top: 8rem;
     background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 80%), url(img/crossfit_3.jpg);
@@ -377,4 +408,43 @@ form#signUp .btn,
 
 #group5 p{
     color:white;
+}
+
+.row{
+    padding: 1rem;
+}
+@media screen and (max-width: 768px) {
+    #group5 .row, .textAlign {
+        text-align: center;
+    }
+    .tableBig td, .tableBig th, .price td, .price th {
+        padding: .3rem;
+    }
+    #signUp, #gym1, #gym2 {
+        position: fixed;
+        top: 5%;
+        left: 10%;
+        width: 90%;
+        z-index:110;
+    }
+    #gym1, #gym2 {
+        top: 25%;
+    }
+    .gimPrice{
+        font-size:medium;
+    }
+    #gym1{
+        padding: 1rem 0 0 0;
+    }
+    #gym2Btn{
+        margin-top: 1rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    .textAlign {
+        text-align: right;
+    }
+    .tableBig td, .tableBig th, .price td, .price th {
+        padding: .75rem;
+    }
 }
