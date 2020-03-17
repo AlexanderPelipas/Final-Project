@@ -115,6 +115,7 @@ form#signUp .form-control:focus {
             height: 2rem;
             opacity: 0.3;
             cursor: pointer;
+            z-index:3;
         }
 
     .close:hover {
@@ -417,10 +418,13 @@ form#signUp .btn,
     #group5 .row, .textAlign {
         text-align: center;
     }
-    .tableBig td, .tableBig th, .price td, .price th {
+    .tableBig td, .tableBig th, .price td, .price th,#table td, #table th {
         padding: .3rem;
     }
-    #signUp, #gym1, #gym2 {
+    td{
+        text-align:center;
+    }
+    #signUp, #gym1, #gym2, #table {
         position: fixed;
         top: 5%;
         left: 10%;
@@ -436,8 +440,16 @@ form#signUp .btn,
     #gym1{
         padding: 1rem 0 0 0;
     }
-    #gym2Btn{
-        margin-top: 1rem;
+    #gym2Btn, #gymCheck{
+        margin: 1rem 0;
+    }
+    #group4 .check:hover::after {
+        content: "Жми";
+        font-size: 8px;
+        font-weight: bold;
+        padding: 0;
+        border: 2px solid #fff;
+        border-radius: 0.5rem;
     }
 }
 @media screen and (min-width: 768px) {
