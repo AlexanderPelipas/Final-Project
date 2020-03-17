@@ -124,7 +124,6 @@ function checkDate(e) {
 let background = document.querySelector("#group4 .back");
 
 function setBackground(e) {
-    console.log(background.classList);
     let backgroundArr = [0,
         "back1",
         "back2",
@@ -138,7 +137,6 @@ function setBackground(e) {
             background.classList.remove(name);
         }
     }
-    console.log(background.classList);
 }
 
 let textMMA = ` <option>Понедельник</option>
@@ -298,4 +296,49 @@ function getContent() {
     deadline.innerHTML = arrJson.find(item => (item.gs$cell.col == 6 && item.gs$cell.row == cellRow)).gs$cell.$t;
     firstVisit.innerHTML = arrJson.find(item => (item.gs$cell.col == 5 && item.gs$cell.row == cellRow)).gs$cell.$t;
     numVisit.innerHTML = arrJson.find(item => (item.gs$cell.col == 8 && item.gs$cell.row == cellRow)).gs$cell.$t;
+}
+//                  map                             //
+
+
+var map;
+function initMap() {
+    var uluru = { lat:47.124565 , lng:37.684836 };  
+    map = new google.maps.Map(document.getElementById('mapid'), {
+        center: uluru,
+        zoom: 14,
+        styles: [
+            {
+                "featureType": "poi.business",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "labels.text",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            }
+        ]
+    });
+    var contentString = 'SpartaFamily';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+        title: "SpartaFamily",
+    });
+    infowindow.open(map, marker);
+    marker.addListener('click', function () {
+        infowindow.open(map, marker);
+    });
+
 }
