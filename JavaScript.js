@@ -342,3 +342,37 @@ function initMap() {
     });
 
 }
+
+/********************* send form **********/
+/***    Use this token to access the HTTP API:
+        981033277:AAHH-NZrdSz6qiE8R5ai2c_vHjjWJPxxWn8
+        "id":-1001384617917     *********/
+
+let inputName = document.getElementById("inputName");
+let tel = document.getElementById("tel");
+let submit = document.getElementById("signUpSubmit");
+let dangerMessage = document.getElementById("danger");
+submit.addEventListener("click", sendMessage);
+
+//Отправляем текст в телеграм канал
+
+function sendMessage(e, token, text, chatid) {
+    let inputTraining = document.getElementById("training");
+    let inputTime = document.getElementById("date");
+    e.preventDefault();
+    var chatid = "-1001384617917";
+    var token = "981033277:AAHH-NZrdSz6qiE8R5ai2c_vHjjWJPxxWn8";
+    var text = `<b>SpartaFamily</b> \n${inputName.value}  ${tel.value} \n${inputTraining.value}  ${inputTime.value}`;
+    if (inputName.value == "" || tel.value == "") {
+        dangerMessage.hidden = false;
+    } else {
+        var z = $.ajax({
+            type: "POST",
+            url: "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatid,
+            data: "parse_mode=HTML&text=" + encodeURIComponent(text),
+        });
+        signUp.hidden = true;
+        inputName.value = "";
+        tel.value = "";
+    }
+};

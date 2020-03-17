@@ -98,6 +98,11 @@ header .row.d-md-none .btn{
     border-radius: 0.5rem;
     border: 2px solid #fff;
 }
+
+#signUp #danger p{
+    color:#D20000;
+}
+
 #signUp.row{
     display:block;
 }
