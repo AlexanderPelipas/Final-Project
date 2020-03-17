@@ -76,11 +76,18 @@ header a {
         text-decoration: none;
     }
 
-/*****************************          form           ************************/
-form#signUp .form-control:focus {
-    border-color: #495057;
-    box-shadow: 0 0 0 0.2rem #d2000073;
+header .row.d-md-none .btn{
+    border:none;
+    z-index:3;
 }
+    header .row.d-md-none .btn:hover{
+        color:transparent;
+    }
+    /*****************************          form           ************************/
+    form#signUp .form-control:focus {
+        border-color: #495057;
+        box-shadow: 0 0 0 0.2rem #d2000073;
+    }
 #signUp {
     position: fixed;
     top: 30%;
@@ -243,14 +250,14 @@ form#signUp .form-control:focus {
 
 @media screen and (max-width: 768px){
     .parallax {
-        height: 100%;
+        height: inherit;
         overflow-x: hidden;
         overflow-y: visible;
         -webkit-perspective: 0px;
         perspective: 0px;
     }
     .group {
-        height: 100%;
+        height: inherit;
         -webkit-transform-style: flat;
         transform-style: flat;
     }
@@ -407,16 +414,45 @@ form#signUp .btn,
     height: 100vh;
 }
 
-#group5 p{
-    color:white;
+#group5 p {
+    color: white;
 }
 
 .row{
     padding: 1rem;
 }
-@media screen and (max-width: 768px) {
+
+/***************            group6              ************************/
+
+#group6 h3, #group6 p {
+    color: white;
+    font-size: 1.0rem;
+    font-family: 'proxima';
+}
+#group6 a img{
+    height:3rem;
+    margin-top:3rem;
+}
+    #group6 a img:hover {
+        opacity: 0.5;
+        text-decoration: none;
+    }
+#mapid {
+    height: 50vh;
+    z-index:120;
+}
+
+
+
+
+    @media screen and (max-width: 768px) {
+        header h3 {
+        font-size: 1.75rem;
+    }
+
     #group5 .row, .textAlign {
         text-align: center;
+        height:auto;
     }
     .tableBig td, .tableBig th, .price td, .price th,#table td, #table th {
         padding: .3rem;
@@ -431,6 +467,11 @@ form#signUp .btn,
         width: 90%;
         z-index:110;
     }
+        #table span.close {
+            right: -1.25rem;
+            top: -1.25rem;
+            opacity: 0.5;
+        }
     #gym1, #gym2 {
         top: 25%;
     }
@@ -458,5 +499,8 @@ form#signUp .btn,
     }
     .tableBig td, .tableBig th, .price td, .price th {
         padding: .75rem;
+    }
+    h2{
+        font-size:2.5rem;
     }
 }
