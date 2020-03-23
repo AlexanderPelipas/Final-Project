@@ -99,10 +99,14 @@ header .row.d-md-none .btn{
     border: 2px solid #fff;
 }
 
-#signUp #danger p{
-    color:#D20000;
+#signUp p{
+    color:white;
+    font-size: 0.8rem;
 }
 
+#signUp .error{
+    background-color: #f85d5d;
+}
 #signUp.row{
     display:block;
 }
